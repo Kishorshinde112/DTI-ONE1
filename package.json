@@ -1,0 +1,29 @@
+{
+  "name": "dti-pulse",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Digital to Infinity - Employee Attendance Management System",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "build": "npm run build:client && npm run build:server",
+    "build:server": "cd server && npm run build",
+    "build:client": "cd client && npm run build",
+    "start": "cd server && npm run start",
+    "migrate": "cd server && npm run migrate",
+    "seed": "cd server && npm run seed",
+    "create-admin": "cd server && npm run create-admin",
+    "migrate:prod": "cd server && npm run migrate:prod",
+    "seed:prod": "cd server && npm run seed:prod",
+    "create-admin:prod": "cd server && npm run create-admin:prod",
+    "postinstall": "cd server && npm install && cd ../client && npm install",
+    "test": "cd server && npm run test"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
