@@ -11,8 +11,8 @@ export function Card({ className, children, onClick }: CardProps) {
   return (
     <div
       className={cn(
-        'rounded-xl border border-border-soft bg-surface p-4 shadow-card transition-all duration-200',
-        onClick && 'cursor-pointer hover:-translate-y-0.5 hover:shadow-card-hover',
+        'rounded-2xl border border-zinc-200/80 bg-white p-5 shadow-sm ring-1 ring-zinc-900/5 transition-all duration-300',
+        onClick && 'cursor-pointer hover:-translate-y-1 hover:shadow-card-hover hover:border-zinc-300',
         className
       )}
       onClick={onClick}
@@ -23,11 +23,11 @@ export function Card({ className, children, onClick }: CardProps) {
 }
 
 export function CardHeader({ className, children }: { className?: string; children: ReactNode }) {
-  return <div className={cn('mb-3 flex items-center justify-between gap-3', className)}>{children}</div>;
+  return <div className={cn('mb-4 flex items-center justify-between gap-3', className)}>{children}</div>;
 }
 
 export function CardTitle({ className, children }: { className?: string; children: ReactNode }) {
-  return <h3 className={cn('text-base font-semibold text-ink', className)}>{children}</h3>;
+  return <h3 className={cn('text-lg font-semibold tracking-tight text-zinc-900', className)}>{children}</h3>;
 }
 
 export function CardContent({ className, children }: { className?: string; children: ReactNode }) {

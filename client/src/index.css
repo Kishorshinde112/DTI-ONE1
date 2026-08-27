@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #2563eb;
-  --color-primary-light: #3b82f6;
-  --color-primary-dark: #1d4ed8;
-  --color-primary-soft: #eff6ff;
-  --color-accent: #0f3460;
-  --color-accent-light: #533483;
+  --color-primary: #4f46e5;
+  --color-primary-light: #6366f1;
+  --color-primary-dark: #4338ca;
+  --color-primary-soft: #eef2ff;
+  --color-accent: #0f172a;
+  --color-accent-light: #334155;
   --color-success: #10b981;
   --color-warning: #f59e0b;
   --color-danger: #ef4444;
@@ -21,42 +21,56 @@
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'Fira Code', ui-monospace, monospace;
 
-  --shadow-card: 0 1px 2px 0 rgb(15 23 42 / 0.04), 0 1px 3px 0 rgb(15 23 42 / 0.08);
-  --shadow-card-hover: 0 4px 6px -1px rgb(15 23 42 / 0.07), 0 12px 24px -8px rgb(15 23 42 / 0.15);
-  --shadow-pop: 0 10px 40px -6px rgb(15 23 42 / 0.25);
+  /* Polished SaaS shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-card-hover: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-pop: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-inner-soft: inset 0 2px 4px 0 rgb(0 0 0 / 0.02);
 
-  --radius-card: 1rem;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-card: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
 
   --animate-fade-in: fade-in 0.3s ease-out;
-  --animate-scale-in: scale-in 0.2s ease-out;
-  --animate-slide-up: slide-up 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-scale-in: scale-in 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-slide-up: slide-up 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-slide-down: slide-down 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 
   @keyframes fade-in {
     from { opacity: 0; }
     to { opacity: 1; }
   }
   @keyframes scale-in {
-    from { opacity: 0; transform: scale(0.96); }
+    from { opacity: 0; transform: scale(0.97); }
     to { opacity: 1; transform: scale(1); }
   }
   @keyframes slide-up {
-    from { opacity: 0; transform: translateY(12px); }
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes slide-down {
+    from { opacity: 0; transform: translateY(-16px); }
     to { opacity: 1; transform: translateY(0); }
   }
 }
 
 :root {
-  --primary: #2563eb;
-  --primary-light: #3b82f6;
-  --primary-dark: #1d4ed8;
-  --primary-soft: #eff6ff;
-  --accent: #0f3460;
-  --accent-light: #533483;
+  --primary: #4f46e5;
+  --primary-light: #6366f1;
+  --primary-dark: #4338ca;
+  --primary-soft: #eef2ff;
+  --accent: #0f172a;
+  --accent-light: #334155;
   --success: #10b981;
   --warning: #f59e0b;
   --danger: #ef4444;
   --danger-dark: #dc2626;
   --info: #3b82f6;
+
+  --bg-app: #f4f4f5; /* Zinc 100 for premium light gray */
 }
 
 * {
@@ -67,16 +81,18 @@
 
 html {
   -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f8fafc;
-  color: #1e293b;
+  background-color: var(--bg-app);
+  color: #18181b; /* Zinc 900 */
   font-size: 16px;
   line-height: 1.5;
+  min-height: 100vh;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -87,9 +103,10 @@ body {
   }
 }
 
-.dark body {
-  background-color: #0f172a;
-  color: #e2e8f0;
+/* Background Pattern for Auth/Welcome screens */
+.bg-pattern {
+  background-image: radial-gradient(#d4d4d8 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
 input, select, textarea, button {
@@ -98,35 +115,32 @@ input, select, textarea, button {
 
 /* ---------- Scrollbar ---------- */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #d4d4d8; /* Zinc 300 */
   border-radius: 9999px;
-  border: 2px solid transparent;
-  background-clip: padding-box;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
-  background-clip: padding-box;
+  background: #a1a1aa; /* Zinc 400 */
 }
 
 /* ---------- Focus visible ---------- */
 :focus-visible {
-  outline: 2px solid #2563eb;
+  outline: 2px solid var(--primary-light);
   outline-offset: 2px;
 }
 
 /* ---------- Skeleton ---------- */
 .skeleton {
-  background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%);
+  background: linear-gradient(90deg, #f4f4f5 25%, #e4e4e7 50%, #f4f4f5 75%);
   background-size: 200% 100%;
   animation: skeleton-loading 1.5s infinite;
-  border-radius: 0.5rem;
+  border-radius: var(--radius-md);
 }
 
 @keyframes skeleton-loading {
@@ -137,6 +151,7 @@ input, select, textarea, button {
 /* ---------- Tabular numbers for data ---------- */
 .tabular {
   font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
 }
 
 /* ---------- Safe area for mobile bottom nav ---------- */
@@ -146,7 +161,7 @@ input, select, textarea, button {
 
 /* ---------- Page entrance ---------- */
 .page-enter {
-  animation: slide-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: slide-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 /* ---------- Number input arrows hidden (cleaner) ---------- */
@@ -158,4 +173,20 @@ input[type='number']::-webkit-inner-spin-button {
 input[type='number'] {
   -moz-appearance: textfield;
   appearance: textfield;
+}
+
+/* Glassmorphism Utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Ring utilities to look like modern SaaS apps (e.g., Stripe, Linear) */
+.ring-premium {
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.05), 0 1px 2px 0 rgba(0,0,0,0.05);
+}
+.ring-premium:hover {
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.08), 0 4px 6px -1px rgba(0,0,0,0.05);
 }

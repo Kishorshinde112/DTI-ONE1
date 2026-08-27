@@ -48,13 +48,13 @@ export default function SignupPage() {
         <Input id="password" type="password" label="Password" value={form.password} onChange={e => update('password', e.target.value)} required />
         <Input id="confirmPassword" type="password" label="Confirm Password" value={form.confirmPassword} onChange={e => update('confirmPassword', e.target.value)} error={errors.confirmPassword} required />
 
-        <p className="text-xs text-slate-500">Min 8 chars: 1 uppercase, 1 lowercase, 1 number, 1 special character</p>
+        <p className="text-xs text-zinc-500">Min 8 chars: 1 uppercase, 1 lowercase, 1 number, 1 special character</p>
 
         <Button type="submit" className="w-full" size="lg" loading={loading}>Create Account</Button>
       </form>
 
       <div className="mt-6 pt-6 border-t border-border-soft text-center">
-        <p className="text-sm text-slate-500">
+        <p className="text-sm text-zinc-500">
           Already have an account? <Link to="/login" className="font-semibold text-primary hover:text-primary-dark hover:underline">Sign In</Link>
         </p>
       </div>

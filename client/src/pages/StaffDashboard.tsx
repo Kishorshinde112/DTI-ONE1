@@ -254,19 +254,19 @@ export default function StaffDashboard() {
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-5">
             <div className="rounded-xl border border-border-soft bg-surface-muted p-3">
-              <p className="text-xs text-slate-500 uppercase tracking-wider">Check-in</p>
+              <p className="text-xs text-zinc-500 uppercase tracking-wider">Check-in</p>
               <p className="text-lg font-semibold text-ink tabular mt-0.5">{formatTime(attendance?.checkInAt)}</p>
             </div>
             <div className="rounded-xl border border-border-soft bg-surface-muted p-3">
-              <p className="text-xs text-slate-500 uppercase tracking-wider">Check-out</p>
+              <p className="text-xs text-zinc-500 uppercase tracking-wider">Check-out</p>
               <p className="text-lg font-semibold text-ink tabular mt-0.5">{formatTime(attendance?.checkOutAt)}</p>
             </div>
             <div className="rounded-xl border border-border-soft bg-surface-muted p-3">
-              <p className="text-xs text-slate-500 uppercase tracking-wider">Worked</p>
+              <p className="text-xs text-zinc-500 uppercase tracking-wider">Worked</p>
               <p className="text-lg font-semibold text-ink tabular mt-0.5">{attendance?.workedMinutes ? minutesToHuman(attendance.workedMinutes) : '--'}</p>
             </div>
             <div className="rounded-xl border border-border-soft bg-surface-muted p-3">
-              <p className="text-xs text-slate-500 uppercase tracking-wider">Status</p>
+              <p className="text-xs text-zinc-500 uppercase tracking-wider">Status</p>
               <div className="mt-1.5">
                 {attendance ? (
                   <div className="flex flex-wrap items-center gap-1.5">
@@ -275,7 +275,7 @@ export default function StaffDashboard() {
                     {attendance.hasOvertime && <Badge variant="info">OT</Badge>}
                   </div>
                 ) : (
-                  <p className="text-sm text-slate-400">Not checked in</p>
+                  <p className="text-sm text-zinc-400">Not checked in</p>
                 )}
               </div>
             </div>
@@ -291,7 +291,7 @@ export default function StaffDashboard() {
               {attendance.halfDayReason === 'CONSECUTIVE_LATE_POLICY' && (
                 <p className="text-amber-600 mt-1">Half Day applied due to consecutive late policy.</p>
               )}
-              {attendance.lateReason && <p className="text-slate-600 mt-1">Reason: {attendance.lateReason}</p>}
+              {attendance.lateReason && <p className="text-zinc-600 mt-1">Reason: {attendance.lateReason}</p>}
             </div>
           )}
 
@@ -338,7 +338,7 @@ export default function StaffDashboard() {
       {/* Summary Cards */}
       {summary && (
         <div>
-          <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">This Month</h3>
+          <h3 className="text-sm font-semibold text-zinc-500 uppercase tracking-wider mb-3">This Month</h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
             {[
               { label: 'Present', value: summary.presentDays, color: 'text-emerald-600', icon: CheckCircle2, bg: 'bg-emerald-50' },
@@ -355,7 +355,7 @@ export default function StaffDashboard() {
                   </div>
                   <div className="min-w-0">
                     <p className={`text-xl font-bold ${color} tabular leading-tight truncate`}>{value}</p>
-                    <p className="text-xs text-slate-500 truncate">{label}</p>
+                    <p className="text-xs text-zinc-500 truncate">{label}</p>
                   </div>
                 </div>
               </Card>
