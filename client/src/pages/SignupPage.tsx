@@ -53,7 +53,7 @@ export default function SignupPage() {
         <Button type="submit" className="w-full" size="lg" loading={loading}>Create Account</Button>
       </form>
 
-      <div className="mt-6 pt-6 border-t border-border-soft text-center">
+      <div className="mt-6 pt-6 border-t border-slate-200 text-center">
         <p className="text-sm text-zinc-500">
           Already have an account? <Link to="/login" className="font-semibold text-primary hover:text-primary-dark hover:underline">Sign In</Link>
         </p>

@@ -64,14 +64,14 @@ export default function VerifyOtpPage() {
         <Button type="submit" className="w-full" size="lg" loading={loading}>Verify</Button>
       </form>
 
-      <div className="mt-6 pt-6 border-t border-border-soft text-center space-y-2">
+      <div className="mt-6 pt-6 border-t border-slate-200 text-center space-y-2">
         <div>
           <button onClick={handleResend} disabled={resending} className="text-sm font-medium text-primary hover:underline disabled:opacity-50">
             {resending ? 'Resending...' : 'Resend OTP'}
           </button>
         </div>
         <div>
-          <Link to="/login" className="text-sm font-medium text-slate-500 hover:text-ink hover:underline">Back to Login</Link>
+          <Link to="/login" className="text-sm font-medium text-slate-500 hover:text-slate-900 hover:underline">Back to Login</Link>
         </div>
       </div>
     </AuthShell>

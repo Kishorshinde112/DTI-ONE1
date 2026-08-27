@@ -102,7 +102,7 @@ export default function AdminDashboard() {
                 <Icon className={`h-5 w-5 ${color}`} />
               </div>
               <div className="min-w-0">
-                <p className="text-2xl font-bold text-ink tabular leading-tight">{value}</p>
+                <p className="text-2xl font-bold text-slate-900 tabular leading-tight">{value}</p>
                 <p className="text-xs text-slate-500 truncate">{label}</p>
               </div>
             </div>
@@ -113,7 +113,7 @@ export default function AdminDashboard() {
       {/* Donut */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <Card className="p-6">
-          <h3 className="font-semibold text-ink mb-1">Today's Breakdown</h3>
+          <h3 className="font-semibold text-slate-900 mb-1">Today's Breakdown</h3>
           <p className="text-sm text-slate-500 mb-5">Live attendance status overview</p>
           <div className="flex flex-col sm:flex-row items-center gap-6">
             <DonutChart segments={donutSegments} />
@@ -122,7 +122,7 @@ export default function AdminDashboard() {
                 <li key={seg.label} className="flex items-center gap-3">
                   <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: donutColors[i] }} />
                   <span className="text-sm text-slate-600 flex-1">{seg.label}</span>
-                  <span className="text-sm font-semibold text-ink tabular">{seg.value}</span>
+                  <span className="text-sm font-semibold text-slate-900 tabular">{seg.value}</span>
                 </li>
               ))}
             </ul>

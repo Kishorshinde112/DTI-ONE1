@@ -53,7 +53,7 @@ export default function AdminLeaves() {
             className={`relative px-4 py-2.5 text-sm font-medium transition-colors -mb-px ${
               statusFilter === t.key
                 ? 'text-primary border-b-2 border-primary'
-                : 'text-slate-500 hover:text-ink border-b-2 border-transparent'
+                : 'text-slate-500 hover:text-slate-900 border-b-2 border-transparent'
             }`}
           >
             {t.label}
@@ -80,7 +80,7 @@ export default function AdminLeaves() {
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                 <div className="min-w-0">
                   <div className="flex flex-wrap items-center gap-2">
-                    <p className="font-medium text-ink">Employee #{l.employeeId}</p>
+                    <p className="font-medium text-slate-900">Employee #{l.employeeId}</p>
                     <Badge variant={sv(l.status)} dot>{l.status}</Badge>
                   </div>
                   <p className="text-sm text-slate-500 mt-1">{l.fromDate} — {l.toDate} ({l.totalDays} days)</p>

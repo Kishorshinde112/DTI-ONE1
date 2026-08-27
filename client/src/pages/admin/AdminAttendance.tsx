@@ -52,8 +52,8 @@ export default function AdminAttendance() {
       />
 
       <div className="flex flex-wrap gap-2">
-        <input type="date" className="rounded-lg border border-border-soft bg-white px-3.5 py-2 text-sm shadow-sm focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none" value={filters.from} onChange={e => setFilters({...filters, from: e.target.value})} aria-label="From date" />
-        <input type="date" className="rounded-lg border border-border-soft bg-white px-3.5 py-2 text-sm shadow-sm focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none" value={filters.to} onChange={e => setFilters({...filters, to: e.target.value})} aria-label="To date" />
+        <input type="date" className="rounded-lg border border-slate-200 bg-white px-3.5 py-2 text-sm shadow-sm focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none" value={filters.from} onChange={e => setFilters({...filters, from: e.target.value})} aria-label="From date" />
+        <input type="date" className="rounded-lg border border-slate-200 bg-white px-3.5 py-2 text-sm shadow-sm focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none" value={filters.to} onChange={e => setFilters({...filters, to: e.target.value})} aria-label="To date" />
         <Select className="w-40" value={filters.status} onChange={e => setFilters({...filters, status: e.target.value})} aria-label="Status">
           <option value="">All Status</option>
           <option value="FULL_DAY">Full Day</option><option value="HALF_DAY">Half Day</option>
@@ -66,7 +66,7 @@ export default function AdminAttendance() {
       </div>
 
       {/* Desktop Table */}
-      <div className="hidden lg:block overflow-hidden rounded-xl border border-border-soft bg-white shadow-card">
+      <div className="hidden lg:block overflow-hidden rounded-xl border border-slate-200 bg-white shadow-card">
         <table className="w-full text-sm">
           <thead className="bg-slate-50"><tr>
             <th className="px-4 py-3 text-left font-semibold text-slate-500">Employee</th>
@@ -81,7 +81,7 @@ export default function AdminAttendance() {
           <tbody className="divide-y divide-slate-100">
             {records.map(r => (
               <tr key={r.id} className="hover:bg-slate-50 transition-colors">
-                <td className="px-4 py-3"><p className="font-medium text-ink">{r.employeeName}</p><p className="text-xs text-slate-500">{r.employeeCode}</p></td>
+                <td className="px-4 py-3"><p className="font-medium text-slate-900">{r.employeeName}</p><p className="text-xs text-slate-500">{r.employeeCode}</p></td>
                 <td className="px-4 py-3 text-slate-600">{r.attendanceDate}</td>
                 <td className="px-4 py-3 text-slate-600 tabular">{formatTime(r.checkInAt)}</td>
                 <td className="px-4 py-3 text-slate-600 tabular">{formatTime(r.checkOutAt)}</td>
@@ -101,7 +101,7 @@ export default function AdminAttendance() {
           <Card key={r.id} className="p-3.5">
             <div className="flex justify-between items-start">
               <div>
-                <p className="font-medium text-ink text-sm">{r.employeeName}</p>
+                <p className="font-medium text-slate-900 text-sm">{r.employeeName}</p>
                 <p className="text-xs text-slate-500">{r.employeeCode} · {r.attendanceDate}</p>
                 <p className="text-xs text-slate-500 mt-1">In: {formatTime(r.checkInAt)} | Out: {formatTime(r.checkOutAt)} | {r.workedDuration}</p>
               </div>

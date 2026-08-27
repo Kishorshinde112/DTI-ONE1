@@ -247,25 +247,25 @@ export default function StaffDashboard() {
               <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary-soft">
                 <Clock className="h-5 w-5 text-primary" />
               </div>
-              <h3 className="font-semibold text-ink">Today's Attendance</h3>
+              <h3 className="font-semibold text-slate-900">Today's Attendance</h3>
             </div>
             <span className="text-lg font-mono tabular text-primary font-semibold bg-primary-soft px-3 py-1 rounded-lg">{currentTime}</span>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-5">
-            <div className="rounded-xl border border-border-soft bg-surface-muted p-3">
+            <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
               <p className="text-xs text-zinc-500 uppercase tracking-wider">Check-in</p>
-              <p className="text-lg font-semibold text-ink tabular mt-0.5">{formatTime(attendance?.checkInAt)}</p>
+              <p className="text-lg font-semibold text-slate-900 tabular mt-0.5">{formatTime(attendance?.checkInAt)}</p>
             </div>
-            <div className="rounded-xl border border-border-soft bg-surface-muted p-3">
+            <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
               <p className="text-xs text-zinc-500 uppercase tracking-wider">Check-out</p>
-              <p className="text-lg font-semibold text-ink tabular mt-0.5">{formatTime(attendance?.checkOutAt)}</p>
+              <p className="text-lg font-semibold text-slate-900 tabular mt-0.5">{formatTime(attendance?.checkOutAt)}</p>
             </div>
-            <div className="rounded-xl border border-border-soft bg-surface-muted p-3">
+            <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
               <p className="text-xs text-zinc-500 uppercase tracking-wider">Worked</p>
-              <p className="text-lg font-semibold text-ink tabular mt-0.5">{attendance?.workedMinutes ? minutesToHuman(attendance.workedMinutes) : '--'}</p>
+              <p className="text-lg font-semibold text-slate-900 tabular mt-0.5">{attendance?.workedMinutes ? minutesToHuman(attendance.workedMinutes) : '--'}</p>
             </div>
-            <div className="rounded-xl border border-border-soft bg-surface-muted p-3">
+            <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
               <p className="text-xs text-zinc-500 uppercase tracking-wider">Status</p>
               <div className="mt-1.5">
                 {attendance ? (
@@ -373,7 +373,7 @@ export default function StaffDashboard() {
           <div>
             <label className="block text-sm font-medium text-slate-700 mb-1.5">Reason for late arrival *</label>
             <textarea
-              className="w-full rounded-lg border border-border-soft px-3.5 py-2.5 text-sm shadow-sm focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none"
+              className="w-full rounded-lg border border-slate-200 px-3.5 py-2.5 text-sm shadow-sm focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none"
               rows={3}
               value={lateReason}
               onChange={e => setLateReason(e.target.value)}
@@ -397,7 +397,7 @@ export default function StaffDashboard() {
           <div>
             <label className="block text-sm font-medium text-slate-700 mb-1.5">Reason for early checkout *</label>
             <textarea
-              className="w-full rounded-lg border border-border-soft px-3.5 py-2.5 text-sm shadow-sm focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none"
+              className="w-full rounded-lg border border-slate-200 px-3.5 py-2.5 text-sm shadow-sm focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none"
               rows={3}
               value={earlyCheckoutReason}
               onChange={e => setEarlyCheckoutReason(e.target.value)}

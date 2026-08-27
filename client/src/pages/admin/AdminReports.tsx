@@ -49,7 +49,7 @@ export default function AdminReports() {
               <FileSpreadsheet className="h-5 w-5 text-primary" />
             </div>
             <div>
-              <h3 className="font-semibold text-ink">Attendance Report</h3>
+              <h3 className="font-semibold text-slate-900">Attendance Report</h3>
               <p className="text-sm text-slate-500">Generate an Excel or CSV export of attendance records.</p>
             </div>
           </div>

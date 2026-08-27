@@ -34,12 +34,12 @@ export function Modal({ open, onClose, title, children, className }: ModalProps)
         aria-modal="true"
         aria-label={title}
         className={cn(
-          'relative z-10 w-full max-w-lg rounded-t-2xl sm:rounded-2xl bg-white p-6 shadow-pop animate-slide-up sm:animate-scale-in max-h-[90vh] overflow-y-auto',
+          'relative z-10 w-full max-w-lg rounded-t-2xl sm:rounded-2xl bg-white p-6 shadow-pop animate-in slide-in-from-bottom-4 duration-300 sm:animate-in sm:zoom-in-95 sm:duration-200 max-h-[90vh] overflow-y-auto',
           className
         )}
       >
         <div className="flex items-center justify-between mb-4">
-          {title && <h2 className="text-lg font-bold text-ink">{title}</h2>}
+          {title && <h2 className="text-lg font-bold text-slate-900">{title}</h2>}
           <button
             onClick={onClose}
             aria-label="Close dialog"

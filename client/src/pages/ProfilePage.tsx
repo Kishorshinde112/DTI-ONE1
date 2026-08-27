@@ -39,14 +39,14 @@ export default function ProfilePage() {
       </div>
 
       <Card className="p-6">
-        <h3 className="font-semibold text-ink mb-4">Details</h3>
+        <h3 className="font-semibold text-slate-900 mb-4">Details</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-1">
           {fields.map(({ icon: Icon, label, value }) => (
             <div key={label} className="flex items-center gap-3 py-3 border-b border-slate-100 last:border-0">
               <Icon className="h-4 w-4 text-slate-400 flex-shrink-0" />
               <div className="flex-1 min-w-0">
                 <p className="text-xs text-slate-500">{label}</p>
-                <p className="text-sm font-medium text-ink truncate">{value}</p>
+                <p className="text-sm font-medium text-slate-900 truncate">{value}</p>
               </div>
             </div>
           ))}

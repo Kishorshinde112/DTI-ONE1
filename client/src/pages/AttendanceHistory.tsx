@@ -98,7 +98,7 @@ export default function AttendanceHistory() {
               <div className="flex items-start justify-between gap-2">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2">
-                    <p className="text-sm font-semibold text-ink">
+                    <p className="text-sm font-semibold text-slate-900">
                       {new Date(r.attendanceDate + 'T00:00:00+05:30').toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'Asia/Kolkata' })}
                     </p>
                     <StatusBadge status={r.mainStatus} />

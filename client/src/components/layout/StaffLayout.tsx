@@ -88,7 +88,7 @@ export function StaffLayout() {
   );
 
   return (
-    <div className="min-h-screen bg-surface-muted flex flex-col lg:flex-row">
+    <div className="min-h-screen bg-slate-50 flex flex-col lg:flex-row">
       {/* Mobile Header */}
       <header className="sticky top-0 z-40 bg-zinc-950 text-white shadow-md lg:hidden w-full">
         <div className="flex items-center justify-between px-4 py-3 w-full">
@@ -113,7 +113,7 @@ export function StaffLayout() {
       {mobileOpen && (
         <div className="fixed inset-0 z-50 lg:hidden">
           <div className="fixed inset-0 bg-zinc-900/60 backdrop-blur-sm animate-fade-in" onClick={() => setMobileOpen(false)} />
-          <div className="fixed inset-y-0 left-0 w-72 shadow-2xl animate-slide-up sm:animate-none overflow-y-auto bg-zinc-950">
+          <div className="fixed inset-y-0 left-0 w-72 shadow-2xl animate-in slide-in-from-bottom-4 duration-300 sm:animate-none overflow-y-auto bg-zinc-950">
             <button
               onClick={() => setMobileOpen(false)}
               aria-label="Close menu"
@@ -143,7 +143,7 @@ export function StaffLayout() {
       </main>
 
       {/* Bottom Nav — mobile */}
-      <nav className="fixed bottom-0 inset-x-0 z-40 bg-white border-t border-zinc-200 lg:hidden safe-area-pb shadow-[0_-4px_16px_rgba(0,0,0,0.04)]">
+      <nav className="fixed bottom-0 inset-x-0 z-40 bg-white border-t border-zinc-200 lg:hidden pb-[env(safe-area-inset-bottom)] shadow-[0_-4px_16px_rgba(0,0,0,0.04)]">
         <div className="flex items-center justify-around px-2 py-1.5">
           {staffNav.map(({ to, icon: Icon, label }) => (
             <NavLink

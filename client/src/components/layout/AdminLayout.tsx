@@ -95,7 +95,7 @@ export function AdminLayout() {
   );
 
   return (
-    <div className="min-h-screen bg-surface-muted flex flex-col lg:flex-row">
+    <div className="min-h-screen bg-slate-50 flex flex-col lg:flex-row">
       {/* Mobile Header */}
       <header className="sticky top-0 z-40 bg-zinc-950 text-white shadow-md lg:hidden">
         <div className="flex items-center justify-between px-4 py-3">
@@ -120,7 +120,7 @@ export function AdminLayout() {
       {sidebarOpen && (
         <div className="fixed inset-0 z-50 lg:hidden">
           <div className="fixed inset-0 bg-zinc-900/60 backdrop-blur-sm animate-fade-in" onClick={() => setSidebarOpen(false)} />
-          <div className="fixed inset-y-0 left-0 w-72 shadow-2xl animate-slide-up sm:animate-none overflow-y-auto bg-zinc-950">
+          <div className="fixed inset-y-0 left-0 w-72 shadow-2xl animate-in slide-in-from-bottom-4 duration-300 sm:animate-none overflow-y-auto bg-zinc-950">
             <button
               onClick={() => setSidebarOpen(false)}
               aria-label="Close menu"

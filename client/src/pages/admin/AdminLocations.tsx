@@ -69,7 +69,7 @@ export default function AdminLocations() {
                     <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-red-50">
                       <MapPin className="h-4 w-4 text-danger" />
                     </div>
-                    <h3 className="font-semibold text-ink truncate">{l.name}</h3>
+                    <h3 className="font-semibold text-slate-900 truncate">{l.name}</h3>
                   </div>
                   {l.address && <p className="text-sm text-slate-500 mt-2">{l.address}</p>}
                   <p className="text-xs text-slate-400 mt-1 font-mono">{l.latitude}, {l.longitude}</p>
