@@ -79,7 +79,7 @@ export default function AdminEmployeeDetail() {
       <div className="flex items-center gap-3">
         <Button variant="ghost" size="sm" onClick={() => navigate('/admin/employees')} aria-label="Back to employees"><ArrowLeft className="h-4 w-4" /></Button>
         <div>
-          <h2 className="text-xl font-bold text-ink">{fullName}</h2>
+          <h2 className="text-xl font-bold text-slate-900">{fullName}</h2>
           <p className="text-sm text-slate-500">{employee.employeeId}</p>
         </div>
       </div>
@@ -103,7 +103,7 @@ export default function AdminEmployeeDetail() {
 
       <Card className="p-6">
         <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
-          <h3 className="font-semibold text-ink">Employee Details</h3>
+          <h3 className="font-semibold text-slate-900">Employee Details</h3>
           <div className="flex gap-2">
             {!editing ? (
               <>

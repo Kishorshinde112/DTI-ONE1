@@ -61,7 +61,7 @@ export default function AdminSettings() {
       <div className="max-w-3xl space-y-5">
         {sections.map(section => (
           <Card key={section.title} className="p-6">
-            <h3 className="font-semibold text-ink">{section.title}</h3>
+            <h3 className="font-semibold text-slate-900">{section.title}</h3>
             <p className="text-sm text-slate-500 mb-5">{section.description}</p>
             <div className="space-y-4">
               {section.items.map(item => (

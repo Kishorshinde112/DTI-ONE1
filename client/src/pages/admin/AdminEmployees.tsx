@@ -88,7 +88,7 @@ export default function AdminEmployees() {
       <div className="relative">
         <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
         <input
-          className="w-full rounded-lg border border-border-soft bg-white pl-10 pr-4 py-2.5 text-sm shadow-sm placeholder:text-slate-400 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none"
+          className="w-full rounded-lg border border-slate-200 bg-white pl-10 pr-4 py-2.5 text-sm shadow-sm placeholder:text-slate-400 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none"
           placeholder="Search by name, email, employee ID, phone..."
           value={search}
           onChange={e => onSearch(e.target.value)}
@@ -96,7 +96,7 @@ export default function AdminEmployees() {
       </div>
 
       {/* Desktop Table */}
-      <div className="hidden lg:block overflow-hidden rounded-xl border border-border-soft bg-white shadow-card">
+      <div className="hidden lg:block overflow-hidden rounded-xl border border-slate-200 bg-white shadow-card">
         <table className="w-full text-sm">
           <thead className="bg-slate-50 text-left">
             <tr>
@@ -116,7 +116,7 @@ export default function AdminEmployees() {
                   <div className="flex items-center gap-3">
                     <Avatar name={`${emp.firstName} ${emp.lastName}`} className="h-8 w-8 text-[10px]" />
                     <div>
-                      <p className="font-medium text-ink">{emp.firstName} {emp.lastName}</p>
+                      <p className="font-medium text-slate-900">{emp.firstName} {emp.lastName}</p>
                       <p className="text-xs text-slate-500">@{emp.username}</p>
                     </div>
                   </div>
@@ -143,7 +143,7 @@ export default function AdminEmployees() {
               <div className="flex items-center gap-3">
                 <Avatar name={`${emp.firstName} ${emp.lastName}`} className="h-10 w-10 text-xs" />
                 <div className="flex-1 min-w-0">
-                  <p className="font-medium text-ink text-sm">{emp.firstName} {emp.lastName}</p>
+                  <p className="font-medium text-slate-900 text-sm">{emp.firstName} {emp.lastName}</p>
                   <p className="text-xs text-slate-500">{emp.employeeId} · {emp.email}</p>
                 </div>
                 <div className="flex flex-col items-end gap-1">

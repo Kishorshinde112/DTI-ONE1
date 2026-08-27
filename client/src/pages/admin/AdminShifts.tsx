@@ -105,7 +105,7 @@ export default function AdminShifts() {
               <div className="flex items-start justify-between">
                 <div className="min-w-0">
                   <div className="flex items-center gap-2">
-                    <h3 className="font-semibold text-ink truncate">{s.name}</h3>
+                    <h3 className="font-semibold text-slate-900 truncate">{s.name}</h3>
                     {!s.isActive && <Badge variant="default">Inactive</Badge>}
                   </div>
                   <p className="text-2xl font-bold text-primary tabular mt-1.5">{formatTime(s.startTime)} - {formatTime(s.endTime)}</p>

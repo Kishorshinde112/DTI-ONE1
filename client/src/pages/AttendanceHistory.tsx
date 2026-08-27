@@ -53,7 +53,7 @@ export default function AttendanceHistory() {
 
   return (
     <div className="space-y-5">
-      <PageHeader title="Attendance History" subtitle="Browse and filter your attendance records" />
+      <PageHeader title="Attendance History" subtitle="Browse and filter your attendance records. All records are read-only." />
 
       {/* Filters */}
       <div className="flex flex-wrap gap-2">
@@ -75,7 +75,7 @@ export default function AttendanceHistory() {
           {summaryItems.map(({ label, value, color, bg }) => (
             <div key={label} className={`${bg} rounded-xl p-3 text-center`}>
               <p className={`font-bold ${color} tabular`}>{value}</p>
-              <p className="text-[11px] text-slate-500 mt-0.5">{label}</p>
+              <p className="text-[11px] text-zinc-500 mt-0.5">{label}</p>
             </div>
           ))}
         </div>
@@ -88,7 +88,7 @@ export default function AttendanceHistory() {
         <Card className="p-10">
           <div className="text-center">
             <CalendarX className="h-10 w-10 text-slate-300 mx-auto mb-3" />
-            <p className="text-slate-500">No attendance records found for this period.</p>
+            <p className="text-zinc-500">No attendance records found for this period.</p>
           </div>
         </Card>
       ) : (
@@ -98,15 +98,15 @@ export default function AttendanceHistory() {
               <div className="flex items-start justify-between gap-2">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2">
-                    <p className="text-sm font-semibold text-ink">
+                    <p className="text-sm font-semibold text-slate-900">
                       {new Date(r.attendanceDate + 'T00:00:00+05:30').toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'Asia/Kolkata' })}
                     </p>
                     <StatusBadge status={r.mainStatus} />
                   </div>
-                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1.5 text-xs text-slate-500">
-                    <span className="flex items-center gap-1"><span className="font-medium text-slate-600">In:</span> {formatTime(r.checkInAt)}</span>
-                    <span className="flex items-center gap-1"><span className="font-medium text-slate-600">Out:</span> {formatTime(r.checkOutAt)}</span>
-                    <span className="flex items-center gap-1"><span className="font-medium text-slate-600">Worked:</span> {minutesToHuman(r.workedMinutes)}</span>
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1.5 text-xs text-zinc-500">
+                    <span className="flex items-center gap-1"><span className="font-medium text-zinc-600">In:</span> {formatTime(r.checkInAt)}</span>
+                    <span className="flex items-center gap-1"><span className="font-medium text-zinc-600">Out:</span> {formatTime(r.checkOutAt)}</span>
+                    <span className="flex items-center gap-1"><span className="font-medium text-zinc-600">Worked:</span> {minutesToHuman(r.workedMinutes)}</span>
                   </div>
                   {r.isLate && (
                     <p className="text-xs text-amber-600 mt-1.5 flex items-center gap-1">Late: {r.lateMinutes}min{r.lateReason ? ` - ${r.lateReason}` : ''}</p>
@@ -124,7 +124,7 @@ export default function AttendanceHistory() {
       )}
 
       {/* Read-only notice */}
-      <p className="text-xs text-center text-slate-400 mt-4">
+      <p className="text-xs text-center text-zinc-400 mt-4">
         Attendance history is read-only. Contact your administrator for corrections.
       </p>
     </div>
