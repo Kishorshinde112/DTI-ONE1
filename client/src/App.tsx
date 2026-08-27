@@ -4,6 +4,7 @@ import { Toaster } from 'react-hot-toast';
 import { AuthProvider, useAuth } from '@/hooks/useAuth';
 import { StaffLayout } from '@/components/layout/StaffLayout';
 import { AdminLayout } from '@/components/layout/AdminLayout';
+import { PwaInstallPrompt } from '@/components/common/PwaInstallPrompt';
 import { lazy, Suspense, type ReactNode } from 'react';
 
 // Auth pages
@@ -101,6 +102,8 @@ export default function App() {
             <Route path="/" element={<Navigate to="/login" replace />} />
             <Route path="*" element={<Navigate to="/login" replace />} />
           </Routes>
+
+          <PwaInstallPrompt />
 
           <Toaster
             position="top-center"

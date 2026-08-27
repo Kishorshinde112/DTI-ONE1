@@ -1,0 +1,16 @@
+services:
+  dti-one-app:
+    image: dti-one-app:latest
+    container_name: dti-one-app
+    restart: always
+    ports:
+      - "0.0.0.0:5010:5000"
+    env_file:
+      - .env
+    networks:
+      - default
+      - dokploy-network
+
+networks:
+  dokploy-network:
+    external: true
