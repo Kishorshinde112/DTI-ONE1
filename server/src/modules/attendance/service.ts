@@ -180,7 +180,7 @@ export async function evaluateConsecutiveLatePolicy(
     .where(eq(systemSettings.key, 'consecutive_late_threshold'))
     .limit(1);
 
-  const threshold = setting ? parseInt(setting.value, 10) : 3;
+  const threshold = setting ? parseInt(setting.value, 10) : 4;
 
   return {
     shouldMarkHalfDay: currentLateStreak >= threshold,

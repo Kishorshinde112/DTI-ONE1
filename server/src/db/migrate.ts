@@ -244,7 +244,7 @@ async function migrate() {
       ('company_name', 'Digital to Infinity', 'Company name'),
       ('timezone', 'Asia/Kolkata', 'Business timezone'),
       ('employee_id_prefix', 'DTI', 'Employee ID prefix'),
-      ('consecutive_late_threshold', '3', 'Number of consecutive late days before half-day is applied'),
+      ('consecutive_late_threshold', '4', 'Number of consecutive late days before half-day is applied'),
       ('consecutive_late_action', 'half_day', 'Action when consecutive late threshold is exceeded'),
       ('max_gps_accuracy', '150', 'Maximum acceptable GPS accuracy in meters'),
       ('allow_signup', 'true', 'Whether new staff signups are allowed')

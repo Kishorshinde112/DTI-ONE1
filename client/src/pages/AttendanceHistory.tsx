@@ -53,7 +53,7 @@ export default function AttendanceHistory() {
 
   return (
     <div className="space-y-5">
-      <PageHeader title="Attendance History" subtitle="Browse and filter your attendance records" />
+      <PageHeader title="Attendance History" subtitle="Browse and filter your attendance records. All records are read-only." />
 
       {/* Filters */}
       <div className="flex flex-wrap gap-2">
